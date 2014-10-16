@@ -1,0 +1,51 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://the-internet.herokuapp.com/"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Dynamic Loading"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "Example 1: Element on page that is hidden"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "button"
+      }
+    },
+    {
+      "type": "waitForElementStyle",
+      "locator": {
+        "type": "id",
+        "value": "loading"
+      },
+      "propertyName": "display",
+      "value": "none"
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "Hello World!"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
